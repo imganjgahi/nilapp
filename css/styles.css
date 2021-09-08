@@ -6,9 +6,13 @@
     --light: white;
     --dark: #444;
     --corners: 8px;
-    direction: rtl;
 
 }
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url('../assets/fonts/Shabnam.TTF');
+  }
 
 * {
     box-sizing: border-box;
@@ -17,8 +21,11 @@
 }
 
 body {
-    /* direction: rtl; */
+    direction: rtl;
     text-align: right;
+    font-family: 'Shabnam', serif;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 header {
@@ -48,6 +55,27 @@ nav a:hover {
     border-radius: var(--corners);
 }
 
+
+.container {
+	display: flex;
+	padding: 20px;
+	gap: 20px;
+	position: relative;
+    height: calc(100vh - 120px);
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+	background-color: var(--dark);
+	color: var(--light);
+	height: 60px;
+	padding: 10px;
+}
+
 /* TASKS STYLES */
 .tasks {
 	width: 600px;
@@ -55,7 +83,99 @@ nav a:hover {
 	border: var(--border);
 	padding: 15px;
 	border-radius: var(--corners);
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.taskCard {
+	border: var(--border);
+	border-radius: 0 0 8px 8px;
+	height: 100px;
+    display: flex;
+}
+
+.taskImg {
+	width: 120px;
+    max-height: 100%;
+	object-fit: cover;
+	border-radius: 0 0 8px;
 }
 
 
+.taskinfo {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.taskHeader,
+.taskfooter,
+.taskBody {
+	padding: 5px;
+}
+
+.taskHeader {
+	background-color: var(--primary);
+}
+
+.taskfooter {
+    text-align: left;
+}
 /* END TASKS STYLES */
+
+.taskForm {
+	width: 400px;
+	max-width: 80%;
+}
+
+.taskForm label {
+	display: block;
+	margin: 5px;
+}
+
+.taskForm input {
+	width: 100%;
+	padding: 5px;
+	border-radius: var(--corners);
+	border: var(--border);
+}
+
+.taskForm fieldset {
+	border-radius: 8px;
+	padding: 15px;
+}
+
+.taskForm .statusLabel {
+	display: inline-block;
+	margin-top: 30px;
+}
+
+.btnWrapper {
+    text-align: left;
+}
+.btnWrapper button {
+	width: 70px;
+	margin: 0 5px;
+	background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    border-radius: var(--corners);
+	padding: 8px;
+	cursor: pointer;
+}
+
+.btnWrapper button:hover {
+    background-color: var(--secondary);
+ }
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    .taskForm {
+        width: 100%;
+        flex-shrink: 0;
+        padding: 20px 5%;
+    }
+}

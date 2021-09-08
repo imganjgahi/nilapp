@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>NiliApp</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -16,16 +18,45 @@
             <a href="about.html">About app</a>
         </nav>
     </header>
-    <div class="tasks">
-        <div class="taskCard">
-            <h3 class="taskHeader"> TaskTitle </h3>
-            <p class="taskBody"> show Task Description in here </p>
-            <div class="taskfooter">
-                Task Footer
+    <section class="container">
+        <form class="taskForm">
+            <fieldset>
+                <legend>تعریف مسئله جدید:</legend>
+                <label for="taskTitle">عنوان</label>
+                <input type="text" id="taskTitle" autofocus>
+                <label for="taskLead">توضیحات</label>
+                <input type="text" id="taskLead">
+                <label for="taskDescription">شرح مسئله</label>
+                <input type="text" id="taskDescription">
+                <label for="taskStatus" class="statusLabel">وضعیت</label>
+                <select id="taskStatus">
+                    <option value="1" selected>TODO</option>
+                    <option value="1">Doing</option>
+                    <option value="1">Done</option>
+                </select>
+                <div class="btnWrapper">
+                    <button type="submit">ثبت</button>
+                    <button type="button">لغو</button>
+                </div>
+            </fieldset>
+
+        </form>
+        <div class="tasks">
+            <div class="taskCard">
+                <img src="assets/images/pic1.jpg" alt="task" class="taskImg">
+                <div class="taskinfo">
+                    <h3 class="taskHeader"> عنوان تسک </h3>
+                    <p class="taskBody"> توضیحات اولیه تسک </p>
+                    <div class="taskfooter">
+                        Task Footer
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <footer> NILAPP </footer>
     <script src="js/app.js"></script>
 </body>
+
 </html>
