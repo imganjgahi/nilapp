@@ -1,5 +1,8 @@
 :root {
     --primary: #3e819b;
+    --secondary: #974c91;
+    --borderColor: #ccc;
+    --border: 1px solid var(--borderColor);
     --light: white;
     --dark: #444;
     --corners: 8px;
@@ -25,4 +28,34 @@ header {
 	gap: 40px;
 	background-color: var(--primary);
 	color: var(--light);
+    padding: 5px;
 }
+
+nav a {
+    color: var(--light);
+    display: inline-block;
+    min-width: 80px;
+    text-decoration: none;
+    transition: all 300ms;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a:hover {
+    background-color: var(--secondary);
+    border-radius: var(--corners);
+}
+
+/* TASKS STYLES */
+.tasks {
+	width: 600px;
+	margin: 10px auto;
+	border: var(--border);
+	padding: 15px;
+	border-radius: var(--corners);
+}
+
+
+/* END TASKS STYLES */
