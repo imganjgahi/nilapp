@@ -1,5 +1,5 @@
 :root {
-    --primary: #3e819b;
+    --primary: #3e629b;
     --secondary: #974c91;
     --borderColor: #ccc;
     --border: 1px solid var(--borderColor);
@@ -90,8 +90,9 @@ footer {
 .taskCard {
 	border: var(--border);
 	border-radius: 0 0 8px 8px;
-	height: 100px;
-    display: flex;
+	height: 120px;
+	display: flex;
+	margin: 15px auto;
 }
 
 .taskImg {

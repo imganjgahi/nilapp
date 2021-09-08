@@ -3,7 +3,8 @@ const taskForm = document.querySelector(".taskForm");
 const titleInput = document.querySelector("#taskTitle");
 const leadInput = document.querySelector("#taskLead");
 const descriptionInput = document.querySelector("#taskDescription");
-const status = document.querySelector("#taskStatus");
+const statusInput = document.querySelector("#taskStatus");
+const tasksWrapper = document.querySelector(".tasks");
 // const imageInput = document.querySelector("#taskImage");
 
 if(taskForm) {
@@ -26,7 +27,15 @@ function createNewTask(event) {
     bodyEL.className = "taskBody"
     footerEL.className = "taskfooter"
     imgEl.src = "assets/images/pic1.jpg"
-    imgEl.alt = "assets/images/pic1.jpg"
-
+    imgEl.alt = "task"
+    headerEL.innerText = titleInput.value
+    bodyEL.innerText = leadInput.value
+    footerEL.innerText = statusInput.value
+    infoEl.appendChild(headerEL)
+    infoEl.appendChild(bodyEL)
+    infoEl.appendChild(footerEL)
+    taskEL.appendChild(imgEl)
+    taskEL.appendChild(infoEl)
+    tasksWrapper.appendChild(taskEL)
 
 }
